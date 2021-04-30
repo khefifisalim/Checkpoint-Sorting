@@ -1,0 +1,27 @@
+PROCEDURE Sorting_Insertion(T: ARRAY_OF INTEGER[50]; temp , j : INTEGER)
+VAR
+     i : INTEGER;
+BEGIN
+    temp := 0;
+    j := 0;
+    FOR i FROM 0 TO T.length -1 DO
+        temp = T[i];
+        j = i;
+        WHILE (j >= 0 && T[j-1] > temp) DO
+            T[j] = T[j-1];
+            j -- ;
+        END_WHILE
+        T[j] = temp ; 
+    END_FOR
+END
+
+ALGORITHM Sorting
+VAR
+    T : ARRAY_OF INTEGER [50];
+    i : INTEGER;
+BEGIN
+    FOR i FROM 0 TO T.length-1 DO
+        Write ( T[i]);
+    END_FOR
+        Write ("The array sorting by insertion is : ", Sorting_Insertion(T[i]));
+END
